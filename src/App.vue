@@ -1,13 +1,22 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+  <div>
+    <ITData></ITData>
   </div>
+  <!-- <nav>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>
+  </nav>
+  <router-view/> -->
 </template>
 
+<script>
+import ITData from '@/views/createITData.vue'
+export default {
+  components: {
+    ITData
+  }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
