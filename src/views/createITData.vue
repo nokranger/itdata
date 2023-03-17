@@ -1,6 +1,6 @@
 <template>
   <div>
-    TEST CREATE ITData
+    <!-- TEST CREATE ITData -->
     <br>
     <br>
     <b-container>
@@ -10,7 +10,7 @@
             Pallet ID No.
           </div>
           <div>
-            <b-input aria-placeholder="Pallet ID No."></b-input>
+            <b-input aria-placeholder="Pallet ID No." v-model="itdata.pallet"></b-input>
           </div>
         </div>
         <div>
@@ -18,7 +18,7 @@
             Account No.
           </div>
           <div>
-            <b-input aria-placeholder="Account No."></b-input>
+            <b-input aria-placeholder="Account No." v-model="itdata.account"></b-input>
           </div>
         </div>
         <div>
@@ -26,7 +26,7 @@
             Total Box Qty on Pallet
           </div>
           <div>
-            <b-input aria-placeholder="Total Box Qty on Pallet"></b-input>
+            <b-input aria-placeholder="Total Box Qty on Pallet" v-model="itdata.totalbox"></b-input>
           </div>
         </div>
         <div>
@@ -34,7 +34,7 @@
             Invoice No.
           </div>
           <div>
-            <b-input aria-placeholder="Invoice No."></b-input>
+            <b-input aria-placeholder="Invoice No." v-model="itdata.invoice"></b-input>
           </div>
         </div>
         <div>
@@ -42,7 +42,7 @@
             Parts Qty in one Box
           </div>
           <div>
-            <b-input aria-placeholder="Parts Qty in one Box"></b-input>
+            <b-input aria-placeholder="Parts Qty in one Box" v-model="itdata.qty"></b-input>
           </div>
         </div>
         <div>
@@ -50,7 +50,7 @@
             INTRANSIT QTY
           </div>
           <div>
-            <b-input aria-placeholder="INTRANSIT QTY"></b-input>
+            <b-input aria-placeholder="INTRANSIT QTY" v-model="itdata.intransitqty"></b-input>
           </div>
         </div>
         <div>
@@ -58,7 +58,7 @@
             Item No.
           </div>
           <div>
-            <b-input aria-placeholder="Item No."></b-input>
+            <b-input aria-placeholder="Item No." v-model="itdata.item"></b-input>
           </div>
         </div>
         <div>
@@ -66,7 +66,7 @@
             Location
           </div>
           <div>
-            <b-input aria-placeholder="Location"></b-input>
+            <b-input aria-placeholder="Location" v-model="itdata.location"></b-input>
           </div>
           <br>
           <div>
@@ -83,9 +83,20 @@
   </div>
 </template>
 <script>
+// import axios from 'axios'
 export default {
   data () {
     return {
+      itdata: {
+        pallet: '',
+        account: '',
+        totalbox: '',
+        invoice: '',
+        qty: '',
+        intransitqty: '',
+        item: '',
+        location: ''
+      },
       field: [
         {
           key: 'age',
@@ -109,8 +120,18 @@ export default {
     }
   },
   methods: {
-    sendData () {
-      console.log('test Send Data')
+    async sendData () {
+      console.log('test Send Data', this.itdata)
+      // try {
+      //   const response = await axios.post('https://example.com/api/data', {
+      //     // data to be sent in the request body
+      //     name: 'John',
+      //     email: 'john@example.com'
+      //   })
+      //   console.log(response.data) // handle the response data
+      // } catch (error) {
+      //   console.error(error) // handle the error
+      // }
     }
   }
 }
