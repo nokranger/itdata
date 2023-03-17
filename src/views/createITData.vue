@@ -83,7 +83,7 @@
   </div>
 </template>
 <script>
-// import axios from 'axios'
+import axios from 'axios'
 export default {
   data () {
     return {
@@ -122,16 +122,12 @@ export default {
   methods: {
     async sendData () {
       console.log('test Send Data', this.itdata)
-      // try {
-      //   const response = await axios.post('https://example.com/api/data', {
-      //     // data to be sent in the request body
-      //     name: 'John',
-      //     email: 'john@example.com'
-      //   })
-      //   console.log(response.data) // handle the response data
-      // } catch (error) {
-      //   console.error(error) // handle the error
-      // }
+      try {
+        const response = await axios.post('http://localhost:4000/itdata', this.itdata)
+        console.log(response.data) // handle the response data
+      } catch (error) {
+        console.error(error) // handle the error
+      }
     }
   }
 }

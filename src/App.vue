@@ -1,19 +1,19 @@
 <template>
   <div>
-    <ITData></ITData>
+    <!-- <ITData></ITData> -->
+    <router-view/>
   </div>
   <!-- <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/> -->
+  </nav> -->
 </template>
 
 <script>
-import ITData from '@/views/createITData.vue'
+// import ITData from '@/views/createITData.vue'
 export default {
   components: {
-    ITData
+    // ITData
   }
 }
 </script>
