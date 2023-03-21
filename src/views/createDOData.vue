@@ -1,236 +1,235 @@
 <template>
-    <div>
-      <!-- TEST CREATE ITData -->
-      <br>
-      <br>
-      <b-container>
+  <div>
+    <!-- TEST CREATE doData -->
+    <br>
+    <br>
+    <b-container>
+      <div>
         <div>
           <div>
-            <div>
-              D/O NUMBER
-            </div>
-            <div>
-              <b-input aria-placeholder="Pallet ID No." v-model="itdata.pallet"></b-input>
-            </div>
+            D/O NUMBER
           </div>
           <div>
-            <div>
-              D/O ITEM NO.
-            </div>
-            <div>
-              <b-input aria-placeholder="Account No." v-model="itdata.account"></b-input>
-            </div>
+            <b-input v-model="doData.doNumber"></b-input>
+          </div>
+        </div>
+        <div>
+          <div>
+            D/O ITEM NO.
           </div>
           <div>
-            <div>
-              D/O ITEM NO.2
-            </div>
-            <div>
-              <b-input aria-placeholder="Total Box Qty on Pallet" v-model="itdata.totalbox"></b-input>
-            </div>
+            <b-input v-model="doData.doItem"></b-input>
+          </div>
+        </div>
+        <div>
+          <div>
+            D/O ITEM NO.2
           </div>
           <div>
-            <div>
-              DO KEY
-            </div>
-            <div>
-              <b-input aria-placeholder="Invoice No." v-model="itdata.invoice"></b-input>
-            </div>
+            <b-input v-model="doData.doItem2"></b-input>
+          </div>
+        </div>
+        <div>
+          <div>
+            DO KEY
           </div>
           <div>
-            <div>
-              CUSTOMER CODE
-            </div>
-            <div>
-              <b-input aria-placeholder="Parts Qty in one Box" v-model="itdata.qty"></b-input>
-            </div>
+            <b-input v-model="doData.doKey"></b-input>
+          </div>
+        </div>
+        <div>
+          <div>
+            CUSTOMER CODE
           </div>
           <div>
-            <div>
-              CUSTOMER NAME
-            </div>
-            <div>
-              <b-input aria-placeholder="INTRANSIT QTY" v-model="itdata.intransitqty"></b-input>
-            </div>
+            <b-input v-model="doData.CustomerCode"></b-input>
+          </div>
+        </div>
+        <div>
+          <div>
+            CUSTOMER NAME
           </div>
           <div>
-            <div>
-              D/O DELIVERY DATE
-            </div>
-            <div>
-              <b-input aria-placeholder="Item No." v-model="itdata.item"></b-input>
-            </div>
+            <b-input v-model="doData.CustomerName"></b-input>
+          </div>
+        </div>
+        <div>
+          <div>
+            D/O DELIVERY DATE
           </div>
           <div>
-            <div>
-              CUSTOMER RECEIVING DATE
-            </div>
-            <div>
-              <b-input aria-placeholder="Item No." v-model="itdata.item"></b-input>
-            </div>
+            <b-input v-model="doData.doDeliveryDate"></b-input>
+          </div>
+        </div>
+        <div>
+          <div>
+            CUSTOMER RECEIVING DATE
           </div>
           <div>
-            <div>
-              ITEM NUMBER
-            </div>
-            <div>
-              <b-input aria-placeholder="Item No." v-model="itdata.item"></b-input>
-            </div>
+            <b-input v-model="doData.CustomerReceivingDate"></b-input>
+          </div>
+        </div>
+        <div>
+          <div>
+            ITEM NUMBER
           </div>
           <div>
-            <div>
-              NUMBER OF BOXES
-            </div>
-            <div>
-              <b-input aria-placeholder="Item No." v-model="itdata.item"></b-input>
-            </div>
+            <b-input v-model="doData.ItemNumber"></b-input>
+          </div>
+        </div>
+        <div>
+          <div>
+            NUMBER OF BOXES
           </div>
           <div>
-            <div>
-              QTY/BOX
-            </div>
-            <div>
-              <b-input aria-placeholder="Item No." v-model="itdata.item"></b-input>
-            </div>
+            <b-input v-model="doData.NumberofBoxes"></b-input>
+          </div>
+        </div>
+        <div>
+          <div>
+            QTY/BOX
           </div>
           <div>
-            <div>
-              D/O QTY
-            </div>
-            <div>
-              <b-input aria-placeholder="Item No." v-model="itdata.item"></b-input>
-            </div>
+            <b-input v-model="doData.QtyBox"></b-input>
+          </div>
+        </div>
+        <div>
+          <div>
+            D/O QTY
           </div>
           <div>
-            <div>
-              ACCOUNT NUMBER
-            </div>
-            <div>
-              <b-input aria-placeholder="Item No." v-model="itdata.item"></b-input>
-            </div>
+            <b-input v-model="doData.doQty"></b-input>
+          </div>
+        </div>
+        <div>
+          <div>
+            ACCOUNT NUMBER
           </div>
           <div>
-            <div>
-              BACK NUMBER
-            </div>
-            <div>
-              <b-input aria-placeholder="Item No." v-model="itdata.item"></b-input>
-            </div>
+            <b-input v-model="doData.AccountNumber"></b-input>
+          </div>
+        </div>
+        <div>
+          <div>
+            BACK NUMBER
           </div>
           <div>
-            <div>
-              LOCATION
-            </div>
-            <div>
-              <b-input aria-placeholder="Item No." v-model="itdata.item"></b-input>
-            </div>
+            <b-input v-model="doData.BackNumber"></b-input>
+          </div>
+        </div>
+        <div>
+          <div>
+            LOCATION
           </div>
           <div>
-            <div>
-              BEARING NUMBER(BASE)
-            </div>
-            <div>
-              <b-input aria-placeholder="Item No." v-model="itdata.item"></b-input>
-            </div>
+            <b-input v-model="doData.Location"></b-input>
+          </div>
+        </div>
+        <div>
+          <div>
+            BEARING NUMBER(BASE)
           </div>
           <div>
-            <div>
-              BEARING NUMBER(SUB)
-            </div>
-            <div>
-              <b-input aria-placeholder="Item No." v-model="itdata.item"></b-input>
-            </div>
+            <b-input v-model="doData.BearingNumber"></b-input>
+          </div>
+        </div>
+        <div>
+          <div>
+            BEARING NUMBER(SUB)
           </div>
           <div>
-            <div>
-              SORT KEY
-            </div>
-            <div>
-              <b-input aria-placeholder="Item No." v-model="itdata.item"></b-input>
-            </div>
+            <b-input v-model="doData.subBearingNumber"></b-input>
+          </div>
+        </div>
+        <div>
+          <div>
+            SORT KEY
           </div>
           <div>
-            <div>
-              Customer Parts No.
-            </div>
-            <div>
-              <b-input aria-placeholder="Item No." v-model="itdata.item"></b-input>
-            </div>
+            <b-input v-model="doData.SortKey"></b-input>
+          </div>
+        </div>
+        <div>
+          <div>
+            Customer Parts No.
           </div>
           <div>
-            <br>
+            <b-input v-model="doData.CustomerPartsNo"></b-input>
+          </div>
+        </div>
+        <div>
+          <br>
+          <div>
             <div>
-              <div>
-              </div>
-              <div>
-                <b-button v-on:click="sendData()">Send Data</b-button>
-              </div>
+            </div>
+            <div>
+              <b-button v-on:click="sendData()">Send Data</b-button>
             </div>
           </div>
         </div>
-      </b-container>
-      <!-- <b-table striped hover :items="items" :fields="field"></b-table> -->
-    </div>
-  </template>
-  <script>
-  import axios from 'axios'
-  export default {
-    data () {
-      return {
-        itdata: {
-          doNumber: '',
-          doItem: '',
-          doItem2: '',
-          doKey: '',
-          CustomerCode: '',
-          CumtomerKey: '',
-          doDeliveryDate: '',
-          CustomerReceivingDate: '',
-          ItemNumber: '',
-          NumberofBoxes: '',
-          QtyBox: '',
-          doQty: '',
-          AccountNumber: '',
-          BackNumber: '',
-          Location: '',
-          BearingNumber: '',
-          subBearingNumber: '',
-          SortKey: '',
-          CustomerPartsNo: ''
+      </div>
+    </b-container>
+    <!-- <b-table striped hover :items="items" :fields="field"></b-table> -->
+  </div>
+</template>
+<script>
+import axios from 'axios'
+export default {
+  data () {
+    return {
+      doData: {
+        doNumber: '',
+        doItem: '',
+        doItem2: '',
+        doKey: '',
+        CustomerCode: '',
+        CumtomerName: '',
+        doDeliveryDate: '',
+        CustomerReceivingDate: '',
+        ItemNumber: '',
+        NumberofBoxes: '',
+        QtyBox: '',
+        doQty: '',
+        AccountNumber: '',
+        BackNumber: '',
+        Location: '',
+        BearingNumber: '',
+        subBearingNumber: '',
+        SortKey: '',
+        CustomerPartsNo: ''
+      },
+      field: [
+        {
+          key: 'age',
+          sortable: true
         },
-        field: [
-          {
-            key: 'age',
-            sortable: true
-          },
-          {
-            key: 'first_name',
-            sortable: true
-          },
-          {
-            key: 'lastname',
-            sortable: true
-          }
-        ],
-        items: [
-          { isActive: true, age: 40, first_name: 'Dickerson', last_name: 'Macdonald' },
-          { isActive: true, age: 21, first_name: 'Larsen', last_name: 'Shaw' },
-          { isActive: true, age: 89, first_name: 'Geneva', last_name: 'Wilson' },
-          { isActive: true, age: 38, first_name: 'Jami', last_name: 'Carney' }
-        ]
-      }
-    },
-    methods: {
-      async sendData () {
-        console.log('test Send Data', this.itdata)
-        try {
-          const response = await axios.post('http://localhost:4000/itdata', this.itdata)
-          console.log(response.data) // handle the response data
-        } catch (error) {
-          console.error(error) // handle the error
+        {
+          key: 'first_name',
+          sortable: true
+        },
+        {
+          key: 'lastname',
+          sortable: true
         }
+      ],
+      items: [
+        { isActive: true, age: 40, first_name: 'Dickerson', last_name: 'Macdonald' },
+        { isActive: true, age: 21, first_name: 'Larsen', last_name: 'Shaw' },
+        { isActive: true, age: 89, first_name: 'Geneva', last_name: 'Wilson' },
+        { isActive: true, age: 38, first_name: 'Jami', last_name: 'Carney' }
+      ]
+    }
+  },
+  methods: {
+    async sendData () {
+      console.log('test Send Data', this.doData)
+      try {
+        const response = await axios.post('http://localhost:4000/doData', this.doData)
+        console.log(response.data) // handle the response data
+      } catch (error) {
+        console.error(error) // handle the error
       }
     }
   }
-  </script>
-  
+}
+</script>

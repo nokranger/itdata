@@ -7,6 +7,7 @@
       <div>
         <b-button v-on:click="getData()">Get Data</b-button>
         <b-button v-on:click="exportData()">Export Data</b-button>
+        <b-button v-on:click="exportData2()">Export Data 2</b-button>
         <b-table striped hover :items="items"></b-table>
         <!-- <div v-for="(item, index) in items" :key="index">
             {{ item.pallet}}
@@ -75,6 +76,43 @@ export default {
         const workbook = XLSX.utils.book_new()
         XLSX.utils.book_append_sheet(workbook, worksheet, 'Sheet1')
         XLSX.writeFile(workbook, 'data.xlsx')
+      } catch (error) {
+        console.error(error) // handle the error
+      }
+    },
+    async exportData2 () {
+      // Your data to be exported
+      // const data = 'This is the data to be exported.'
+      try {
+        const response = await axios.get('http://localhost:4000/getitdata')
+        console.log(response.data) // handle the response data
+        this.items = response.data.result
+        // Create a new Blob object with the data
+        const dataString = JSON.stringify(this.items)
+        const blob = new Blob([dataString[1].pallet], { type: 'text/plain' })
+
+        // Create a new URL for the blob
+        const url = URL.createObjectURL(blob)
+
+        // Create a new anchor tag with the URL
+        const a = document.createElement('a')
+        a.href = url
+
+        // Set the anchor tag's attributes
+        a.download = 'data.txt'
+        a.style.display = 'none'
+
+        // Append the anchor tag to the document body
+        document.body.appendChild(a)
+
+        // Click the anchor tag to trigger the download
+        a.click()
+
+        // Remove the anchor tag from the document body
+        document.body.removeChild(a)
+
+        // Revoke the URL object to free up memory
+        URL.revokeObjectURL(url)
       } catch (error) {
         console.error(error) // handle the error
       }
