@@ -82,14 +82,15 @@ export default {
     },
     async exportData2 () {
       // Your data to be exported
-      // const data = 'This is the data to be exported.'
+      // const data = '2300379     0010012300379     001001       QTMIA   TOYOTA DAIHATSU               20230110        53363                         00040000002400000096053363       F20-21      PU107529RMZY      FGP0/08K8KBKJP2300379     001'
+      const data = [['aaabbbeee'], 'data2', 'data3', 'data4', 'data5']
       try {
         const response = await axios.get('http://localhost:4000/getitdata')
         console.log(response.data) // handle the response data
         this.items = response.data.result
         // Create a new Blob object with the data
-        const dataString = JSON.stringify(this.items)
-        const blob = new Blob([dataString[1].pallet], { type: 'text/plain' })
+        // const dataString = JSON.stringify(this.items)
+        const blob = new Blob([data[0]], { type: 'text/plain' })
 
         // Create a new URL for the blob
         const url = URL.createObjectURL(blob)
