@@ -197,27 +197,7 @@ export default {
         subBearingNumber: '',
         SortKey: '',
         CustomerPartsNo: ''
-      },
-      field: [
-        {
-          key: 'age',
-          sortable: true
-        },
-        {
-          key: 'first_name',
-          sortable: true
-        },
-        {
-          key: 'lastname',
-          sortable: true
-        }
-      ],
-      items: [
-        { isActive: true, age: 40, first_name: 'Dickerson', last_name: 'Macdonald' },
-        { isActive: true, age: 21, first_name: 'Larsen', last_name: 'Shaw' },
-        { isActive: true, age: 89, first_name: 'Geneva', last_name: 'Wilson' },
-        { isActive: true, age: 38, first_name: 'Jami', last_name: 'Carney' }
-      ]
+      }
     }
   },
   methods: {
@@ -235,6 +215,7 @@ export default {
         console.log('doNumberReturn: ', this.doData.doNumber)
         return this.doData.doNumber
       }
+      console.log('test Send Data', this.doData)
       // console.log('doNumberAfterCount: ', this.doData.doNumber)
       // try {
       //   const response = await axios.post('http://localhost:4000/doData', this.doData)
