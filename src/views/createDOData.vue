@@ -173,7 +173,7 @@
   </div>
 </template>
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 export default {
   data () {
     return {
@@ -223,12 +223,25 @@ export default {
   methods: {
     async sendData () {
       console.log('test Send Data', this.doData)
-      try {
-        const response = await axios.post('http://localhost:4000/doData', this.doData)
-        console.log(response.data) // handle the response data
-      } catch (error) {
-        console.error(error) // handle the error
+      console.log('doNumber', this.doData.doNumber)
+      if (this.doData.doNumber.length < 12) {
+        const count = 12 - this.doData.doNumber.length
+        console.log('doNumberCount: ', count)
+        for (let i = 0; i < count; i++) {
+          this.doData.doNumber += ' '
+          console.log('doNumberAfterCount: ', this.doData.doNumber)
+        }
+      } else {
+        console.log('doNumberReturn: ', this.doData.doNumber)
+        return this.doData.doNumber
       }
+      // console.log('doNumberAfterCount: ', this.doData.doNumber)
+      // try {
+      //   const response = await axios.post('http://localhost:4000/doData', this.doData)
+      //   console.log(response.data) // handle the response data
+      // } catch (error) {
+      //   console.error(error) // handle the error
+      // }
     }
   }
 }
