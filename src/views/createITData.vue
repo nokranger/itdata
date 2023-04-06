@@ -83,7 +83,7 @@
   </div>
 </template>
 <script>
-// import axios from 'axios'
+import axios from 'axios'
 export default {
   data () {
     return {
@@ -191,12 +191,12 @@ export default {
         console.log('This is a true sum', (this.itdata.pallet + this.itdata.account + this.itdata.totalbox + this.itdata.invoice + this.itdata.qty + this.itdata.intransitqty + this.itdata.item + this.itdata.location).length)
         console.log('This is a true sum', (this.itdata.pallet + this.itdata.account + this.itdata.totalbox + this.itdata.invoice + this.itdata.qty + this.itdata.intransitqty + this.itdata.item + this.itdata.location))
         console.log('Show all itdata: ', this.itdata)
-      // try {
-      //   const response = await axios.post('http://localhost:4000/itdata', this.itdata)
-      //   console.log(response.data) // handle the response data
-      // } catch (error) {
-      //   console.error(error) // handle the error
-      // }
+        try {
+          const response = await axios.post('http://localhost:4000/itdata', this.itdata)
+          console.log(response.data) // handle the response data
+        } catch (error) {
+          console.error(error) // handle the error
+        }
       } else {
         console.log('This is false, please', (this.itdata.pallet + this.itdata.account + this.itdata.totalbox + this.itdata.invoice + this.itdata.qty + this.itdata.intransitqty + this.itdata.item + this.itdata.location).length)
         console.log('This is false, please', (this.itdata.pallet + this.itdata.account + this.itdata.totalbox + this.itdata.invoice + this.itdata.qty + this.itdata.intransitqty + this.itdata.item + this.itdata.location))
