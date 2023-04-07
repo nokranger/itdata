@@ -173,7 +173,7 @@
   </div>
 </template>
 <script>
-// import axios from 'axios'
+import axios from 'axios'
 export default {
   data () {
     return {
@@ -196,7 +196,8 @@ export default {
         BearingNumber: '',
         subBearingNumber: '',
         SortKey: '',
-        CustomerPartsNo: ''
+        CustomerPartsNo: '',
+        sumdodata: ''
       }
     }
   },
@@ -361,12 +362,13 @@ export default {
         console.log('This is a true sum', (this.doData.doNumber + this.doData.doItem + this.doData.doItem2 + this.doData.doKey + this.doData.CustomerCode + this.doData.CustomerName + this.doData.doDeliveryDate + this.doData.CustomerReceivingDate + this.doData.ItemNumber + this.doData.NumberofBoxes + this.doData.QtyBox + this.doData.doQty + this.doData.AccountNumber + this.doData.BackNumber + this.doData.Location + this.doData.BearingNumber + this.doData.subBearingNumber + this.doData.SortKey + this.doData.CustomerPartsNo).length)
         console.log('This is a true sum', (this.doData.doNumber + this.doData.doItem + this.doData.doItem2 + this.doData.doKey + this.doData.CustomerCode + this.doData.CustomerName + this.doData.doDeliveryDate + this.doData.CustomerReceivingDate + this.doData.ItemNumber + this.doData.NumberofBoxes + this.doData.QtyBox + this.doData.doQty + this.doData.AccountNumber + this.doData.BackNumber + this.doData.Location + this.doData.BearingNumber + this.doData.subBearingNumber + this.doData.SortKey + this.doData.CustomerPartsNo))
         console.log('Show all doData: ', this.doData)
-      // try {
-      //   const response = await axios.post('http://localhost:4000/doData', this.doData)
-      //   console.log(response.data) // handle the response data
-      // } catch (error) {
-      //   console.error(error) // handle the error
-      // }
+        this.dodata.sumdodata = (this.doData.doNumber + this.doData.doItem + this.doData.doItem2 + this.doData.doKey + this.doData.CustomerCode + this.doData.CustomerName + this.doData.doDeliveryDate + this.doData.CustomerReceivingDate + this.doData.ItemNumber + this.doData.NumberofBoxes + this.doData.QtyBox + this.doData.doQty + this.doData.AccountNumber + this.doData.BackNumber + this.doData.Location + this.doData.BearingNumber + this.doData.subBearingNumber + this.doData.SortKey + this.doData.CustomerPartsNo)
+        try {
+          const response = await axios.post('http://localhost:4000/doData', this.doData)
+          console.log(response.data) // handle the response data
+        } catch (error) {
+          console.error(error) // handle the error
+        }
       } else {
         console.log('This is false, please', (this.doData.doNumber + this.doData.doItem + this.doData.doItem2 + this.doData.doKey + this.doData.CustomerCode + this.doData.CustomerName + this.doData.doDeliveryDate + this.doData.CustomerReceivingDate + this.doData.ItemNumber + this.doData.NumberofBoxes + this.doData.QtyBox + this.doData.doQty + this.doData.AccountNumber + this.doData.BackNumber + this.doData.Location + this.doData.BearingNumber + this.doData.subBearingNumber + this.doData.SortKey + this.doData.CustomerPartsNo).length)
         console.log('This is false, please', (this.doData.doNumber + this.doData.doItem + this.doData.doItem2 + this.doData.doKey + this.doData.CustomerCode + this.doData.CustomerName + this.doData.doDeliveryDate + this.doData.CustomerReceivingDate + this.doData.ItemNumber + this.doData.NumberofBoxes + this.doData.QtyBox + this.doData.doQty + this.doData.AccountNumber + this.doData.BackNumber + this.doData.Location + this.doData.BearingNumber + this.doData.subBearingNumber + this.doData.SortKey + this.doData.CustomerPartsNo))

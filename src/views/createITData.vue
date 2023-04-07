@@ -95,7 +95,8 @@ export default {
         qty: '',
         intransitqty: '',
         item: '',
-        location: ''
+        location: '',
+        sumitdata: ''
       },
       field: [
         {
@@ -191,6 +192,7 @@ export default {
         console.log('This is a true sum', (this.itdata.pallet + this.itdata.account + this.itdata.totalbox + this.itdata.invoice + this.itdata.qty + this.itdata.intransitqty + this.itdata.item + this.itdata.location).length)
         console.log('This is a true sum', (this.itdata.pallet + this.itdata.account + this.itdata.totalbox + this.itdata.invoice + this.itdata.qty + this.itdata.intransitqty + this.itdata.item + this.itdata.location))
         console.log('Show all itdata: ', this.itdata)
+        this.itdata.sumitdata = (this.itdata.pallet + this.itdata.account + this.itdata.totalbox + this.itdata.invoice + this.itdata.qty + this.itdata.intransitqty + this.itdata.item + this.itdata.location)
         try {
           const response = await axios.post('http://localhost:4000/itdata', this.itdata)
           console.log(response.data) // handle the response data
